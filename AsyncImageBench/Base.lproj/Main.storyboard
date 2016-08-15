@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VnD-AV-LRE">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="qZm-1C-HMu">
+            <objects>
+                <viewController id="VnD-AV-LRE" customClass="ViewController" customModule="AsyncImageBench" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Arq-nc-OXm"/>
+                        <viewControllerLayoutGuide type="bottom" id="dmw-nB-efD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I4C-BG-N6N">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://localhost:3000" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dpk-6U-2Nd">
+                                <rect key="frame" x="20" y="550" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="A0J-cG-0tt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xUt-hb-WM7" userLabel="Image View 1">
+                                <rect key="frame" x="150.5" y="150" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="4im-mf-47d"/>
+                                    <constraint firstAttribute="height" constant="300" id="WEf-xL-bdU"/>
+                                    <constraint firstAttribute="width" constant="300" id="cqv-st-CLu"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="4im-mf-47d"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHb-98-MaF">
+                                <rect key="frame" x="241" y="514" width="160" height="30"/>
+                                <state key="normal" title="Start SDWebImage"/>
+                                <connections>
+                                    <action selector="pushStartSDWebImage:" destination="VnD-AV-LRE" eventType="touchUpInside" id="mWO-6b-7s0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bw-wi-xOe">
+                                <rect key="frame" x="241" y="550" width="160" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="eoS-kb-ar8"/>
+                                </constraints>
+                                <state key="normal" title="Start PINRemoteImage"/>
+                                <connections>
+                                    <action selector="pushStartPINRemoteImage:" destination="VnD-AV-LRE" eventType="touchUpInside" id="RO2-oK-5nL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dpk-6U-2Nd" firstAttribute="leading" secondItem="I4C-BG-N6N" secondAttribute="leadingMargin" id="2Xm-vo-neT"/>
+                            <constraint firstItem="2bw-wi-xOe" firstAttribute="leading" secondItem="Dpk-6U-2Nd" secondAttribute="trailing" constant="21" id="30r-U8-FzI"/>
+                            <constraint firstItem="2bw-wi-xOe" firstAttribute="top" secondItem="CHb-98-MaF" secondAttribute="bottom" constant="6" id="3oJ-vH-eDf"/>
+                            <constraint firstItem="dmw-nB-efD" firstAttribute="top" secondItem="Dpk-6U-2Nd" secondAttribute="bottom" constant="20" id="HvK-lA-qyw"/>
+                            <constraint firstItem="xUt-hb-WM7" firstAttribute="centerX" secondItem="I4C-BG-N6N" secondAttribute="centerX" id="JFB-Mi-J1a"/>
+                            <constraint firstItem="CHb-98-MaF" firstAttribute="height" secondItem="2bw-wi-xOe" secondAttribute="height" id="Wfu-XO-dgN"/>
+                            <constraint firstItem="xUt-hb-WM7" firstAttribute="centerY" secondItem="I4C-BG-N6N" secondAttribute="centerY" id="bs8-6H-tVb"/>
+                            <constraint firstItem="CHb-98-MaF" firstAttribute="width" secondItem="2bw-wi-xOe" secondAttribute="width" id="pEC-gB-huO"/>
+                            <constraint firstItem="dmw-nB-efD" firstAttribute="top" secondItem="2bw-wi-xOe" secondAttribute="bottom" constant="20" id="x1x-d9-G39"/>
+                            <constraint firstItem="CHb-98-MaF" firstAttribute="leading" secondItem="2bw-wi-xOe" secondAttribute="leading" id="zrX-sm-ViD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="iv1" destination="xUt-hb-WM7" id="DOy-IK-hje"/>
+                        <outlet property="urlField" destination="Dpk-6U-2Nd" id="Oih-vh-hWh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vgt-Wd-mSx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="237" y="273"/>
+        </scene>
+    </scenes>
+</document>
